@@ -1,0 +1,13 @@
+version: "3"
+services:
+  web:
+    container_name: spot-reccomend-web
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./src:/usr/src
+    command: /bin/sh -c "cd backend && npm start"
